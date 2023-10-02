@@ -2,12 +2,19 @@ from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from django.contrib import messages
 from validate_email import validate_email
 import json
 # Create your views here.
 
 class RegisterationView(View):
     def get(self,request):
+        return render(request,'authentication/register.html')
+    def post(self,request):
+        messages.success(request,'success message')
+        messages.warning(request,'warning message')
+        messages.info(request,'info message')
+        messages.error(request,'error message')
         return render(request,'authentication/register.html')
 
 class UsernameFieldValidation(View):

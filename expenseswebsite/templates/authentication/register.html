@@ -8,6 +8,7 @@
           <h4>Register for a free account</h4>
         </div>
         <form action="" method="post">
+          {% include 'partials/_messages.html' %} {% csrf_token %}
           <div class="form-group py-1">
             <input
               type="text"
